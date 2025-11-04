@@ -13,7 +13,7 @@ function Home() {
     },[])
 
   async function get() {
-  const res=  await fetch('http://localhost:5000/test',
+  const res=  await fetch('https://to-do-backende.vercel.app/test',
       {
         method: 'GET',
           headers: { "Content-Type": "application/json" },
@@ -28,7 +28,7 @@ setdata(data)
 
 async function postdata() {
      if(text == "") return
-    const res = await fetch('http://localhost:5000/post',{
+    const res = await fetch('https://to-do-backende.vercel.app/post',{
         method: "POST",
          headers: { "Content-Type": "application/json" },
          body: JSON.stringify({
@@ -43,7 +43,7 @@ async function postdata() {
 
 
 async function update() {
-    const res = await fetch(`http://localhost:5000/update/${eid}`,{
+    const res = await fetch(`https://to-do-backende.vercel.app/update/${eid}`,{
         method:'PUT',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({todos: edit})
@@ -57,7 +57,7 @@ get()
 }
 
 async function delet(id) {
-    const res = await fetch(`http://localhost:5000/delete/${id}`,{
+    const res = await fetch(`https://to-do-backende.vercel.app/delete/${id}`,{
         method: 'DELETE',
      
     })
@@ -68,7 +68,7 @@ async function delet(id) {
 }
 
 async function delteall() {
-    const res = await fetch('http://localhost:5000/deleteall',{
+    const res = await fetch('https://to-do-backende.vercel.app/delete-all',{
         method:'DELETE'
     })
     const mes = res.json()
